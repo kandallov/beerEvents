@@ -12,8 +12,6 @@ final class NetWorker {
     
     static let shared = NetWorker()
     
-    private let apiKey = "8cc5fd80cac6eb68e159469e8c78875d"
-    
     let defaultSession = URLSession(configuration: .default)
     var dataTask: URLSessionDataTask?
     
