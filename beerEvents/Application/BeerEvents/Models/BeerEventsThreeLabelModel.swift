@@ -19,14 +19,10 @@ class BeerEventsThreeLabelModel: BaseElementModel {
     
     override func genericConfigureCell<T: BaseContainerTableViewCell<ThreeLabelView>>(_ cell: T) {
         cell.backgroundColor = .clear
-        cell.mViewContent.firstLabel.numberOfLines = 0
-        cell.mViewContent.firstLabel.textAlignment = .center
         cell.mViewContent.firstLabel.text = beerEvent.name
-        cell.mViewContent.secondLabel.numberOfLines = 0
-        cell.mViewContent.secondLabel.textAlignment = .center
-        cell.mViewContent.secondLabel.text = beerEvent.region + ", " + beerEvent.countryIsoCode
-        cell.mViewContent.thirdLabel.numberOfLines = 0
-        cell.mViewContent.thirdLabel.textAlignment = .center
+        if let region = beerEvent.region, let countryIsoCode = beerEvent.countryIsoCode {
+            cell.mViewContent.secondLabel.text = region + ", " + countryIsoCode
+        }
         cell.mViewContent.thirdLabel.text = beerEvent.endDate
     }
 }

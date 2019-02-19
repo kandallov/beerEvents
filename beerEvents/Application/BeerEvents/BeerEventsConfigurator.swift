@@ -7,20 +7,21 @@
 //
 
 import UIKit
+import CoreData
 
 class BeerEventsConfigurator {
     
     weak var localRouter: BeerEventsRouter?
     
     @discardableResult
-    func loadModule(from navigationController: UINavigationController) -> UIViewController {
-        let controller = loadModule(navigationObject: navigationController)
+    func loadModule(from navigationController: UINavigationController, persistentContainer: NSPersistentContainer) -> UIViewController {
+        let controller = loadModule(navigationObject: navigationController, persistentContainer: persistentContainer)
         localRouter?.showInNavigationController(controller: navigationController)
         return controller
     }
     
     @discardableResult
-    func loadModule(navigationObject: UINavigationController) -> UIViewController {
+    func loadModule(navigationObject: UINavigationController, persistentContainer: NSPersistentContainer) -> UIViewController {
         let controller = BeerEventsViewController()
         let presenter = BeerEventsPresenter()
         let router = BeerEventsRouter()
@@ -31,6 +32,7 @@ class BeerEventsConfigurator {
         router.baseController = controller
         localRouter = router
         interactor.presenter = presenter
+        interactor.persistentContainer = persistentContainer
         presenter.interactor = interactor
         presenter.router = router
         presenter.view = controller

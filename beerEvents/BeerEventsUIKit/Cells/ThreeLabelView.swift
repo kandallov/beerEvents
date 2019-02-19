@@ -18,12 +18,15 @@ public class ThreeLabelView: BaseKitView, AppearanceView {
         public var firstLabelFont = UIFont(name: "Avenir-Light", size: 21.0)
         public var firstLabelColor = UIColor.white
         public var firstLabelNumberOfLines = 0
+        public var firstLabelTextAlignment = NSTextAlignment.center
         public var secondLabelFont = UIFont(name: "Avenir-Light", size: 15.0)
         public var secondLabelColor = UIColor.white
         public var secondLabelNumberOfLines = 0
+        public var secondLabelTextAlignment = NSTextAlignment.center
         public var thirdLabelFont = UIFont(name: "Avenir-Light", size: 15.0)
         public var thirdLabelColor = UIColor.white
         public var thirdLabelNumberOfLines = 0
+        public var thirdLabelTextAlignment = NSTextAlignment.center
     }
     
     public var firstLabel = UILabel()
@@ -48,12 +51,15 @@ public class ThreeLabelView: BaseKitView, AppearanceView {
         firstLabel.font = appearance.firstLabelFont
         firstLabel.textColor = appearance.firstLabelColor
         firstLabel.numberOfLines = appearance.firstLabelNumberOfLines
+        firstLabel.textAlignment = appearance.firstLabelTextAlignment
         secondLabel.font = appearance.secondLabelFont
         secondLabel.textColor = appearance.secondLabelColor
         secondLabel.numberOfLines = appearance.secondLabelNumberOfLines
+        secondLabel.textAlignment = appearance.secondLabelTextAlignment
         thirdLabel.font = appearance.thirdLabelFont
         thirdLabel.textColor = appearance.thirdLabelColor
         thirdLabel.numberOfLines = appearance.thirdLabelNumberOfLines
+        thirdLabel.textAlignment = appearance.thirdLabelTextAlignment
     }
     
     override func makeConstraints() {

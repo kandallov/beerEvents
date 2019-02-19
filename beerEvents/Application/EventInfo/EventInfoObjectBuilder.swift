@@ -19,7 +19,7 @@ class EventInfoObjectsBuilder: EventInfoObjectsBuilderInputProtocol {
         if let price = data.price {
           models.append(EventInfoSingleLabelModel(price))
         }
-        if let description = data.description {
+        if let description = data.descriptions {
            models.append(EventInfoSingleLabelModel(description))
         }
         models.append(EventInfoLinedImageViewModel(data))

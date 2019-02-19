@@ -11,6 +11,7 @@ import UIKit
 final class NetWorker {
     
     static let shared = NetWorker()
+    private init() {}
     
     let defaultSession = URLSession(configuration: .default)
     var dataTask: URLSessionDataTask?
